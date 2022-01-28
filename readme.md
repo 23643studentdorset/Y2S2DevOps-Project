@@ -16,7 +16,7 @@ Your company is aiming to create a prototype first to show it to the stakeholder
 
 ### Team
 
-The team is composed by:Itamar, Luciano, Mateus, Usman, Josue and xxx.
+The team is composed by:Itamar, Luciano, Mateus, Usman and xxx.
 
 ### Tecnhology
 
