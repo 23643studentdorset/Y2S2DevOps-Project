@@ -1,0 +1,7 @@
+https://ubuntu.com/tutorials/install-and-configure-apache#1-overview
+
+https://www.codewithrandom.com/2021/10/make-calendar-using-html-css-javascript.html
+
+https://www.w3schools.com/nodejs/nodejs_mysql.asp
+
+https://demo.mobiscroll.com/javascript/calendar/appointment-booking
