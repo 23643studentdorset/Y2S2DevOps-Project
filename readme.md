@@ -16,8 +16,11 @@ Your company is aiming to create a prototype first to show it to the stakeholder
 
 ### Team
 
-The team is composed by:Itamar, Luciano, Mateus, Usman and xxx.
+The team is composed by:Itamar, Luciano, Mateus, Usman and Josue.
+Frontend: Itamar
+Server: Mateus
+Database: Luciano and Usman
 
 ### Tecnhology
 
-XXXX
+-Node.js
