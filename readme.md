@@ -23,11 +23,16 @@ Database: Luciano and Usman
 
 ### Tecnhology
 
+#### Frontend
+
+Bootstrap with custom HTML/CSS.
+#### Server
+
 -Node.js
 
-Company: Dorset Tech Department: BA Subject: Report 
+### Company: Dorset Tech Department: BA Subject: Report 
 
-Client: Mr. Wenhao Fu Date: 03/02/2022 
+### Client: Mr. Wenhao Fu Date: 03/02/2022 
 
  
 
