@@ -24,3 +24,61 @@ Database: Luciano and Usman
 ### Tecnhology
 
 -Node.js
+
+Company: Dorset Tech Department: BA Subject: Report 
+
+Client: Mr. Wenhao Fu Date: 03/02/2022 
+
+ 
+
+Mr. Wenhao Fu, a representative of a local school in the area has contacted Dorset Tech to build an application that can be used to manage student activities. The BA team met with Mr. Wenhao Fu on the 28th of January via zoom call to discuss what he wants, and we have been able to draw out the necessary requirements. Below, you will find said requirements. 
+
+ 
+
+ 
+
+Requirements 1: 
+
+Server (AWS) 
+
+Database 
+
+Goal: 
+
+Create a good web page which consists of all information regarding all assignments from each module. 
+
+Insert buttons on the webpage to click on to let the students upload the assignments. 
+
+Create a server and make this webpage available online. 
+
+Make us of a database which helps us to collect all the assignment and organize them. 
+
+ 
+
+All the assignments must be available at one location and could be managed by the admin. 
+
+ 
+
+ 
+
+Requirement 2: 
+
+Accessibility 
+
+ 
+
+Only the lecturer will be able to create a letterbox for students to add their assignments or documents to the site. 
+
+Only The lecturer or Professor for each module will be able to add in information such as the assignment information (technical instructions for students, such as what the expected file type, version, and size should be if they are able to upload the final draft and if so, how many?) 
+
+Only the lecturer will be allowed to make modifications to this website, and students will only be able to add their materials 
+
+Only the lecturer will be able to delete certain undesired files or assessments anytime. 
+
+ 
+
+ 
+
+Requirement 3: 
+
+ 
