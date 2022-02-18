@@ -1,1 +1,6 @@
 SQL: https://lucid.app/lucidchart/9f0c65cd-8a2a-4d00-a6c7-3023a88860da/edit?page=0_0&invitationId=inv_d2e5681f-a0a7-4899-9fe1-acd68c4dc1d8#
+
+user table:
+Adding constraints:
+      [x] user_name format %@%.%
+      
