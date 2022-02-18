@@ -1,7 +1,7 @@
 var mysql = require('mysql2');
 var conn = mysql.createConnection({
   host: 'localhost', // Replace with your host name
-  user: 'user',      // Replace with your database username
+  user: 'root',      // Replace with your database username
   password: 'password',      // Replace with your database password
   database: 'myapp' // // Replace with your database Name
 });
