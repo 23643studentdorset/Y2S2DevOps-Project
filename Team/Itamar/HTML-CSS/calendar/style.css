@@ -3,8 +3,8 @@
     --dark-maim: #141529;
     --dark-second: #79788c;
     --dark-hover: ##323048;
-    --dark-text: ##f8fbff;
-    --light-body: ##f3ff8e;
+    --dark-text: #f8fbff;
+    --light-body: #f3f8fe;
     --light-main: #fdfdfd;
     --light-second: #c3c2c8;
     --light-hover: #edf0f5;
@@ -12,7 +12,7 @@
     --blue: #0000ff;
     --white: #fff;
     --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    --font-family: cursive;
+    --font-family: ubuntu, sans-serif;
 }
 
 .dark {
@@ -25,8 +25,8 @@
 
 .light {
     --bg-body: var(--light-body);
-    --bd-main: var(--light-maim);
-    --bd-second: var(--light-second);
+    --bg-main: var(--light-main);
+    --bg-second: var(--light-second);
     --color-hover: var(--light-hover);
     --color-text: var(--light-text);
 }
@@ -76,4 +76,118 @@ body {
 
 .calendar-week-day {
     display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: 600;
+    height: 50px;
+}
+
+.calendar-week-day div {
+    display: grid;
+    place-items: center;
+    color: var(--bd-second);
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    color: var(--color-text);
+}
+
+.calendar-days div {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    position: relative;
+    cursor: pointer;
+}
+
+.month-picker {
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.month-picker:hover {
+    background-color: var(--color-hover);
+}
+
+.year-picker {
+    display: flex;
+    align-items: center;
+}
+
+.year-change {
+    height: 40px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.year-change:hover {
+    background-color: var(--color-hover);
+}
+
+.calendar-footer {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.toggle {
+    display: flex;
+}
+
+.toggle span {
+    margin-right: 10px;
+    color: var(--color-text);
+}
+
+.dark-mode-switch {
+    position: relative;
+    width: 48px;
+    height: 25px;
+    border-radius: 14px;
+    background-color: var(--bg-second);
+    cursor: pointer;
+}
+
+.div-dark-mode-switch-ident {
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    background-color: var(--bg-main);
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: left 0.2s ease-in-out;
+}
+
+.dark .dark-mode-switch .div-dark-mode-switch-ident {
+    top: 2px;
+    left: calc(2px + 50%);
+}
+
+.calendar-days div {
+    position: relative;
+}
+
+.calendar-days div span1 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0px;
+}
+
+.appointment {
+    border: none;
+    text-align: center;
+    font-size: 11px;
+    cursor: pointer;
 }
