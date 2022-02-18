@@ -1,28 +1,36 @@
 var express = require('express');
 var router = express.Router();
-var db=require('../database');
-router.get('/form', function(req, res, next) {
-res.render('users');
-});
-router.get('/user-list', function(req, res, next) {
-    var sql='SELECT * FROM users';
-    db.query(sql, function (err, data, fields) {
-    if (err) throw err;
-    res.render('user-list', { title: 'User List', userData: data});
-  });
-});
-module.exports = router;
-router.post('/create', function(req, res, next) {
+var db = require('../database');
 
-  // store all the user input data
+router.get('/index', function(req, res, next) {
+  res.render('index');
+  console.log("test");
+});
+
+router.post('/signin', function(req, res, next) {
   const userDetails=req.body;
+  console.log(userDetails.Username);
+  console.log("test")
 
-  // insert user data into users table
-  var sql = 'INSERT INTO users SET ?';
-  db.query(sql, userDetails,function (err, data) {
+  var sql = 'select username from users where username like ?';
+  db.query(sql, userDetails.Username,function (err, data) {
       if (err) throw err;
-         console.log("User dat is inserted successfully ");
+      if (!data.length) {
+        console.log("No user found!");
+      } else {
+        sql = 'select `password` from users where username like \''+userDetails.Username+'\'';
+        db.query(sql, userDetails.Password,function (err, data) {
+          console.log(data[0].password);
+          if (err) throw err;
+          if (data[0].password == userDetails.Password) {
+            console.log("Welcome! You have been authenticated!");
+            res.redirect('/welcome.html');
+          } else {
+            console.log("Your password does not match. Go away!");
+            res.redirect('/goaway.html');
+          }
+        });
+      }
   });
- res.redirect('/users/form');  // redirect to user form page after inserting the data
 });
 module.exports = router;
