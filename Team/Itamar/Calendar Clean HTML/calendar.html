@@ -12,7 +12,7 @@
 <body>
     <div id="container">
         <div id="header">
-            <div id="yearDisplay">Year 2022</div>
+            <div id="year">Year 2022</div>
         </div>
         <div id="centerTitle">
         </div>
@@ -32,12 +32,12 @@
             <div class="weeks" id="currentweeks">11</div>
             <div class="weeks" data-bs-target="#eventAdd" data-bs-toggle="modal">12</div>
             <div class="weeks" data-bs-target="#eventAdd" data-bs-toggle="modal">13
-                <div class="event" data-bs-target="#eventModal" data-bs-toggle="modal" style="background-color: #58bae4">Math Exam</div>
-                <div class="event" data-bs-target="#eventModal" data-bs-toggle="modal" style="background-color: #e45882">Devps Exam</div>
-                <div class="event" data-bs-target="#eventModal" data-bs-toggle="modal" style="background-color: #58e482">Ui Exam</div>
+                <div class="event" data-bs-target="#eventShow" data-bs-toggle="modal" style="background-color: #58bae4" title="Math Exam" description="This test will consist of 2 hours working">Title</div>
+                <div class="event" data-bs-target="#eventShow" data-bs-toggle="modal" style="background-color: #e45882">Devps Exam</div>
+                <div class="event" data-bs-target="#eventShow" data-bs-toggle="modal" style="background-color: #58e482">Ui Exam</div>
             </div>
             <div class="weeks" data-bs-target="#eventAdd" data-bs-toggle="modal">14
-                <div class="event" data-bs-target="#eventModal" data-bs-toggle="modal" style="background-color: #58bae4">Math Exam</div>
+                <div class="event" data-bs-target="#eventShow" data-bs-toggle="modal" style="background-color: #58bae4">Math Exam</div>
             </div>
             <div class="weeks" data-bs-target="#eventAdd" data-bs-toggle="modal">15</div>
             <div class="weeks" data-bs-target="#eventAdd" data-bs-toggle="modal">16</div>
@@ -82,11 +82,11 @@
 
 
     <!-- Modal Show Event -->
-    <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
+    <div class="modal fade" id="eventShow" tabindex="-1" aria-labelledby="eventShowLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="eventModalLabel">Event XXXX</h5>
+                    <h5 class="modal-title" id="eventShowLabel">Event XXXX</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
