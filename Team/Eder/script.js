@@ -32,7 +32,6 @@ function load() {
     const day = dt.getDate();
     const month = dt.getMonth();
     const year = dt.getFullYear();
-
     const firstDayOfMonth = new Date(year, month, 1);
     const daysInMonth = new Date(year, month + 1, 0).getDate();
 
@@ -49,10 +48,9 @@ function load() {
   })} ${year}`;
 
     calendar.innerHTML = '';
-    for (let i = 0; i <= 56; i++) {
+    for (let i = 0; i < 52; i++) {
         const daySquare = document.createElement('div');
         daySquare.classList.add('day');
-
         const dayString = `${month + 1}/${i - paddingDays}/${year}`;
 
         if (i > paddingDays) {

@@ -1,0 +1,255 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <div id="yearDisplay">Year 2022</div>
+        </div>
+        <div id="week">
+        </div>
+
+        <!-- Populate the calendar using javascript -->
+        <div id="calendar">
+            <div class="weeks">1</div>
+            <div class="weeks">2</div>
+            <div class="weeks">3</div>
+            <div class="weeks">4</div>
+            <div class="weeks">5</div>
+            <div class="weeks">6</div>
+            <div class="weeks">7</div>
+            <div class="weeks">8</div>
+            <div class="weeks">9</div>
+            <div class="weeks">10</div>
+            <div class="weeks" id="currentweeks">11</div>
+            <div class="weeks">12</div>
+            <div class="weeks">13
+                <div class="event">Math Exam</div>
+                <div class="event">OOP Exam</div>
+                <div class="event">SQL Exam</div>
+                <div class="event">UX/UI Exam</div>
+            </div>
+            <div class="weeks">14
+                <div class="event">Math Exam</div>
+            </div>
+            <div class="weeks">15</div>
+            <div class="weeks">16</div>
+            <div class="weeks">17</div>
+            <div class="weeks">18</div>
+            <div class="weeks">19</div>
+            <div class="weeks">20</div>
+            <div class="weeks">21</div>
+            <div class="weeks">22</div>
+            <div class="weeks">23</div>
+            <div class="weeks">24</div>
+            <div class="weeks">25</div>
+            <div class="weeks">26</div>
+            <div class="weeks">27</div>
+            <div class="weeks">28</div>
+            <div class="weeks">29</div>
+            <div class="weeks">30</div>
+            <div class="weeks">31</div>
+            <div class="weeks">32</div>
+            <div class="weeks">33</div>
+            <div class="weeks">34</div>
+            <div class="weeks">35</div>
+            <div class="weeks">36</div>
+            <div class="weeks">37</div>
+            <div class="weeks">38</div>
+            <div class="weeks">39</div>
+            <div class="weeks">40</div>
+            <div class="weeks">41</div>
+            <div class="weeks">42</div>
+            <div class="weeks">43</div>
+            <div class="weeks">44</div>
+            <div class="weeks">45</div>
+            <div class="weeks">46</div>
+            <div class="weeks">47</div>
+            <div class="weeks">48</div>
+            <div class="weeks">49</div>
+            <div class="weeks">50</div>
+            <div class="weeks">51</div>
+            <div class="weeks">52</div>
+        </div>
+    </div>
+
+    <div id="newEventModal">
+        <h2>New Event</h2>
+        <input id="eventTitleInput" placeholder="Event Title">
+
+        <button id="saveButton">Save</button>
+        <button id="cancelButton">Cancel</button>
+    </div>
+
+    <div id="deleteEventModal">
+        <h2>Event</h2>
+
+        <p id="eventText"></p>
+
+        <button id="deleteButton">Delete</button>
+        <button id="closeButton">Close</button>
+    </div>
+
+    <div id="modalBackDrop"></div>
+</body>
+
+</html>
+
+<style>
+    body {
+        display: flex;
+        margin-top: 50px;
+        justify-content: center;
+        background-color: #fffcff;
+    }
+    
+    button {
+        width: 75px;
+        cursor: pointer;
+        box-shadow: 0px 0px 2px gray;
+        border: none;
+        outline: none;
+        padding: 5px;
+        border-radius: 5px;
+        color: white;
+    }
+    
+    #header {
+        padding: 10px;
+        color: #d36c6c;
+        font-size: 26px;
+        font-family: sans-serif;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    #header button {
+        background-color: #92a1d1;
+    }
+    
+    #container {
+        width: 770px;
+    }
+    
+    #weekweekss {
+        width: 100%;
+        display: flex;
+        color: #247ba0;
+    }
+    
+    #weekweekss div {
+        width: 100px;
+        padding: 10px;
+    }
+    
+    #calendar {
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .weeks {
+        width: 100px;
+        padding: 10px;
+        height: 100px;
+        cursor: pointer;
+        box-sizing: border-box;
+        background-color: white;
+        margin: 5px;
+        box-shadow: 0px 0px 3px #cbd4c2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .weeks:hover {
+        background-color: #e8faed;
+    }
+    
+    .weeks+#currentweeks {
+        background-color: #e8f4fa;
+    }
+    
+    .event {
+        font-size: 10px;
+        padding: 3px;
+        background-color: #58bae4;
+        color: white;
+        border-radius: 5px;
+        max-height: 55px;
+        overflow: auto;
+    }
+    
+    .padding {
+        cursor: default !important;
+        background-color: #fffcff !important;
+        box-shadow: none !important;
+    }
+    
+    #newEventModal,
+    #deleteEventModal,
+    .position {
+        display: none;
+        z-index: 20;
+        padding: 25px;
+        background-color: #e8f4fa;
+        box-shadow: 0px 0px 3px black;
+        border-radius: 5px;
+        width: 350px;
+        top: 100px;
+        left: calc(50% - 175px);
+        position: absolute;
+        font-family: sans-serif;
+    }
+    
+    .position {
+        top: 30px;
+    }
+    
+    #eventTitleInput {
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 25px;
+        border-radius: 3px;
+        outline: none;
+        border: none;
+        box-shadow: 0px 0px 3px gray;
+    }
+    
+    #eventTitleInput.error {
+        border: 2px solid red;
+    }
+    
+    #cancelButton,
+    #deleteButton {
+        background-color: #d36c6c;
+    }
+    
+    #saveButton,
+    #closeButton {
+        background-color: #92a1d1;
+    }
+    
+    #eventText {
+        font-size: 14px;
+    }
+    
+    #modalBackDrop {
+        display: none;
+        top: 0px;
+        left: 0px;
+        z-index: 10;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+</style>
