@@ -1,1 +1,3 @@
-a
+https://geshan.com.np/blog/2020/11/nodejs-mysql-tutorial/
+
+ssh -i "devopsdorset.pem" ec2-user@ec2-52-30-162-23.eu-west-1.compute.amazonaws.com

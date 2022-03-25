@@ -14,6 +14,8 @@ USE calendarDB;
 
     );
 
+    //Email - Username - Leve of the Username
+    //LEVEL: 1 ADMIN / 2 Lecture / 3 Student
     INSERT INTO USER VALUES ('admin@gmail.com', 'admin1', 1);
     INSERT INTO USER VALUES ('profesor@gmail.com', 'profesor1', 2);
     INSERT INTO USER VALUES ('student@gmail.com', 'student1', 3);

@@ -16,7 +16,7 @@ Your company is aiming to create a prototype first to show it to the stakeholder
 
 ### Team
 
-The team is composed by:[Itamar](https://github.com/codeitamarjr), [Luciano](https://github.com/xxx),[Mateus](https://github.com/xxx), [Usman](https://github.com/xxx) and [Josue](https://github.com/xxx).
+The team is composed by:[Eder](https://github.com/xxx),[Itamar](https://github.com/codeitamarjr), [Luciano](https://github.com/xxx),[Mateus](https://github.com/xxx), [Usman](https://github.com/xxx) and [Josue](https://github.com/xxx).
 Frontend: Itamar
 Server: Mateus
 Database: Luciano and Usman
