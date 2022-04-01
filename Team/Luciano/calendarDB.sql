@@ -33,9 +33,5 @@ USE calendarDB;
     );
 
     
-    
-    INSERT INTO USER VALUES ('admin@gmail.com', 'admin1', 1);
-    INSERT INTO USER VALUES ('profesor@gmail.com', 'profesor1', 2);
-    INSERT INTO USER VALUES ('student@gmail.com', 'student1', 3);
 
     
