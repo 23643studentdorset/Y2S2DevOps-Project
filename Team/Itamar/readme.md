@@ -5,7 +5,7 @@
 
 ## Environment
 
-To run the application, you need to install the following packages:
+To run the application, you need to install the following packages(Step by step made to Ubuntu based OS):
 
 ```console
 sudo apt-get install apache2 #To install Apache
