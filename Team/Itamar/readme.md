@@ -27,7 +27,8 @@ sudo systemctl reload apache2 #To reload the apache2 service
 
 ### Project steps
 
-- [x] HTML and CSS
+- [x] HTML and CSS;
+- [x] Modals to view and edit an event;
 - [ ] connect to the DB
 
 SQL Data: username root password empty
