@@ -3,7 +3,7 @@
 $HOST = 'localhost';
 $USERNAME = 'root';
 $DBPASSWORD = '';
-$DBNAME = '';
+$DBNAME = 'calendarDB';
 
 /* Define credentials.*/
 define('DB_SERVER', $HOST);

@@ -37,3 +37,9 @@ SQL Data: username ?? password empty
 
 LOGIN TABLE:
 USER_NAME , PASSWORD_, ACCESS_LVL{ 1-SYSTEM 2-Lecture 3-Student }
+
+### Project test environment
+
+You can access the live version here:
+
+<http://ec2-52-30-162-23.eu-west-1.compute.amazonaws.com/calendar/>
