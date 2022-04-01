@@ -1,6 +1,8 @@
 
 # Calendar Web Application
 
+![Add Event](http://url/to/img.png)
+
 ## Environment
 
 To run the application, you need to install the following packages:
