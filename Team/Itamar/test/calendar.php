@@ -165,7 +165,7 @@ $user_level = getUserData($username, 'ACCESS_LVL');
 
     #container {
         /* Sice of the calendar */
-        width: 1500px;
+        width: 1430px;
     }
 
     #weekdayss {
