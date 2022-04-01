@@ -1,9 +1,7 @@
 
 # Logs
 
-## Diary
-
-### Environment
+## Environment
 
 To run the application, you need to install the following packages:
 
@@ -21,9 +19,11 @@ sudo nano /etc/apache2/mods-enabled/dir.conf #To add the following line
 </IfModule>
 ```
 
-```bash
+```console
 sudo systemctl reload apache2 #To reload the apache2 service
 ```
+
+### Project steps
 
 [x] HTML and CSS
 
