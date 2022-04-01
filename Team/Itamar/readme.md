@@ -13,9 +13,13 @@ sudo apt-get install mysql-server #To install MySQL
 sudo apt-get install php libapache2-mod-php php-mysql #To install PHP and its modules to connect to MySQL
 php -v #To check the version of php
 sudo nano /etc/apache2/mods-enabled/dir.conf #To add the following line
+```
+
 <IfModule mod_dir.c>
         DirectoryIndex index.php index.html
 </IfModule>
+
+```bash
 sudo systemctl reload apache2 #To reload the apache2 service
 ```
 
