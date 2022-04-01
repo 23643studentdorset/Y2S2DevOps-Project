@@ -1,3 +1,8 @@
+
+# Logs
+
+## Diary
+
 ### Enviorement
 
 [x] HTML and CSS
