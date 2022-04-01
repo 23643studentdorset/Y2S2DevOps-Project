@@ -34,9 +34,9 @@ sudo systemctl reload apache2 #To reload the apache2 service
 SQL Data: username root password empty
 
 - [x] function GET USER
-- [ ] load New Modal for level 1 and 2
-- [ ] load Edit Modal for level 1 and 2
-- [ ] load View Modal for level 1 and 2
+- [ ] load New Modal Event for level 1, and 2
+- [ ] load Edit Modal Event for level 1, and 2
+- [ ] load View Modal Event for level 1, 2, and 3
 
 ### SQL Structure
 
