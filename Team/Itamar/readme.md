@@ -14,7 +14,7 @@ sudo apt-get install php libapache2-mod-php php-mysql #To install PHP and its mo
 php -v #To check the version of php
 sudo nano /etc/apache2/mods-enabled/dir.conf #To add the following line
 <IfModule mod_dir.c>
-        DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm
+        DirectoryIndex index.php index.html
 </IfModule>
 sudo systemctl reload apache2 #To reload the apache2 service
 ```
