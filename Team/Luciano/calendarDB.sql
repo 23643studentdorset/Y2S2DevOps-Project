@@ -4,7 +4,7 @@ CREATE DATABASE calendarDB;
 
 USE calendarDB; 
 
-    CREATE TABLE IF NOT EXISTS USER (
+    CREATE TABLE USER (
         USER_NAME   varchar (25) not null,
         PASSWORD_   varchar (10) not null,
         --ACCESS_LVL: 1 ADMIN / 2 LECTURER / 3 STUDENT
