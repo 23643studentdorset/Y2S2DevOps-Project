@@ -1,9 +1,11 @@
 
-# Logs
+# Calendar Web Application
+
+![Add Event](https://github.com/23643studentdorset/Y2S2DevOps-Project/blob/master/Team/Itamar/screens/addEvent.png)
 
 ## Environment
 
-To run the application, you need to install the following packages:
+To run the application, you need to install the following packages(Step by step made to Ubuntu based OS):
 
 ```console
 sudo apt-get install apache2 #To install Apache
@@ -25,19 +27,16 @@ sudo systemctl reload apache2 #To reload the apache2 service
 
 ### Project steps
 
-[x] HTML and CSS
+- [x] HTML and CSS;
+- [x] Modals to view and edit an event;
+- [ ] connect to the DB
 
-[ ] connect to the DB
+SQL Data: username root password empty
 
-SQL Data: username ?? password empty
-
-[ ] function GET USER
-
-[ ] load New Modal for level 1 and 2
-
-[ ] load Edit Modal for level 1 and 2
-
-[ ] load View Modal for level 1 and 2
+- [ ] function GET USER
+- [ ] load New Modal for level 1 and 2
+- [ ] load Edit Modal for level 1 and 2
+- [ ] load View Modal for level 1 and 2
 
 ### SQL Structure
 
