@@ -6,10 +6,15 @@
 ### Enviorement
 
 [x] HTML and CSS
+
 [ ] connect to the DB
+
 [ ] function GET USER
+
 [ ] load New Modal for level 1 and 2
+
 [ ] load Edit Modal for level 1 and 2
+
 [ ] load View Modal for level 1 and 2
 
 SQL Data: username ?? password ??
