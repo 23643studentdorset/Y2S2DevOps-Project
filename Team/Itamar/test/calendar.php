@@ -127,14 +127,14 @@ $user_level = getUserData($username, 'ACCESS_LVL');
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="eventAddLabel">Add new Event</h5>
+                    <h5 class="modal-title" id="eventAddLabel">Create new Event</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Eddding a new event
+                    Adding a new event
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Edit</button>
+                    <button type="button" class="btn btn-primary">Insert and Save</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
