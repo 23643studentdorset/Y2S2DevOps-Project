@@ -25,19 +25,14 @@ sudo systemctl reload apache2 #To reload the apache2 service
 
 ### Project steps
 
-[x] HTML and CSS
-
-[ ] connect to the DB
-
+- [x] HTML and CSS
+- [ ] connect to the DB
 SQL Data: username ?? password empty
 
-[ ] function GET USER
-
-[ ] load New Modal for level 1 and 2
-
-[ ] load Edit Modal for level 1 and 2
-
-[ ] load View Modal for level 1 and 2
+- [ ] function GET USER
+- [ ] load New Modal for level 1 and 2
+- [ ] load Edit Modal for level 1 and 2
+- [ ] load View Modal for level 1 and 2
 
 ### SQL Structure
 
