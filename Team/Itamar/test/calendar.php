@@ -1,3 +1,23 @@
+<?php
+// Initialize the session
+session_start();
+
+//Load environment variables
+require "config/config.php";
+require "functions.php";
+
+// Check if the user is logged in, if not then redirect him to login/index page
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+    header("location: index.php");
+    exit;
+}
+
+//Set the $username variable
+$username = $_SESSION["username"];
+$user_level = getUserData($username, 'ACCESS_LVL');
+
+?>
+
 <html lang="en">
 
 <head>
@@ -5,12 +25,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendar</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div id="container">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand">Calendar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link">Welcome <?php echo $_SESSION["username"]; ?> | Access level <?PHP echo $user_level;?> <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="logout.php">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
         <div id="header">
             <div id="year">Year 2022</div>
         </div>
@@ -114,7 +153,7 @@
         justify-content: center;
         background-color: #fffcff;
     }
-    
+
     #header {
         padding: 10px;
         color: #d36c6c;
@@ -123,25 +162,25 @@
         display: flex;
         justify-content: space-between;
     }
-    
+
     #container {
         /* Sice of the calendar */
         width: 1500px;
     }
-    
+
     #weekdayss {
         width: 100%;
         display: flex;
         color: #247ba0;
     }
-    
+
     #calendar {
         width: 100%;
         margin: auto;
         display: flex;
         flex-wrap: wrap;
     }
-    
+
     .days {
         padding: 10px;
         width: 100px;
@@ -156,15 +195,15 @@
         flex-direction: column;
         justify-content: space-between;
     }
-    
+
     .days:hover {
         background-color: #e8faed;
     }
-    
+
     .days+#currentdays {
         background-color: #e8f4fa;
     }
-    
+
     .event {
         font-size: 10px;
         padding: 3px;

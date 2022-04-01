@@ -29,11 +29,11 @@ sudo systemctl reload apache2 #To reload the apache2 service
 
 - [x] HTML and CSS;
 - [x] Modals to view and edit an event;
-- [ ] connect to the DB
+- [x] connect to the DB
 
 SQL Data: username root password empty
 
-- [ ] function GET USER
+- [x] function GET USER
 - [ ] load New Modal for level 1 and 2
 - [ ] load Edit Modal for level 1 and 2
 - [ ] load View Modal for level 1 and 2
