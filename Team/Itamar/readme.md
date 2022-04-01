@@ -3,7 +3,17 @@
 
 ## Diary
 
-### Enviorement
+### Environment
+
+To run the application, you need to install the following packages:
+
+```Environment
+sudo apt-get install Apache
+sudo apt-get install MySQL
+sudo apt-get install PHP
+
+    ```
+
 
 [x] HTML and CSS
 
