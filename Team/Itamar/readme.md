@@ -8,8 +8,8 @@
 To run the application, you need to install the following packages:
 
 ```bash
-sudo apt-get install Apache
-sudo apt-get install MySQL 
+sudo apt-get install apache2 #To install Apache
+sudo apt-get install mysql-server #To install MySQL
 sudo apt-get install php libapache2-mod-php php-mysql
 php -v #To check the version of php
 sudo nano /etc/apache2/mods-enabled/dir.conf #To add the following line
