@@ -27,6 +27,7 @@ sudo systemctl reload apache2 #To reload the apache2 service
 
 - [x] HTML and CSS
 - [ ] connect to the DB
+
 SQL Data: username ?? password empty
 
 - [ ] function GET USER
