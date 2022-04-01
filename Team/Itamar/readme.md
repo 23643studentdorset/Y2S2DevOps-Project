@@ -15,9 +15,11 @@ php -v #To check the version of php
 sudo nano /etc/apache2/mods-enabled/dir.conf #To add the following line
 ```
 
+```nano
 <IfModule mod_dir.c>
         DirectoryIndex index.php index.html
 </IfModule>
+```
 
 ```bash
 sudo systemctl reload apache2 #To reload the apache2 service
