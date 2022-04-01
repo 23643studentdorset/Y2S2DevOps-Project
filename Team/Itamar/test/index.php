@@ -7,80 +7,36 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     header("location: calendar.php");
     exit;
 }
-
 // Include config file
-include "config/config.php";
+require_once "config/config.php";
 
-// Define variables and initialize with empty values
-$username = $password = "";
-$username_err = $password_err = $login_err = "";
-
-// Processing form data when form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // username and password sent from form
+    $username = mysqli_real_escape_string($link, $_POST["username"]);
+    $password = mysqli_real_escape_string($link, $_POST["password"]);
 
-    // Check if username is empty
-    if (empty(trim($_POST["username"]))) {
-        $username_err = "Please enter username.";
-    } else {
-        $username = trim($_POST["username"]);
-    }
-    // Check if password is empty
-    if (empty(trim($_POST["password"]))) {
-        $password_err = "Please enter your password.";
-    } else {
-        $password = trim($_POST["password"]);
-    }
+    // Prepare a select statement to check if the username matchs with the DB
+    $query = "SELECT USER_NAME_,PASSWORD_ FROM USER WHERE (USER_NAME_ = '$username')";
+    $result = mysqli_query($link, $query);
+    while ($row = mysqli_fetch_array($result)) {
+        $passwordDB = $row['PASSWORD_'];
+        // Prepare a select statement to check if the password matchs with the DB
+        if ($password == $passwordDB) {
+            //If success start the session to store the username and loggedin as true
+            session_start();
 
-    // Validate credentials
-    if (empty($username_err) && empty($password_err)) {
-        // Prepare a select statement
-        $sql = "SELECT USER_NAME, PASSWORD_, ACCESS_LVL FROM USER WHERE USER_NAME = ?";
-        if ($stmt = mysqli_prepare($link, $sql)) {
-            // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "s", $param_username);
+            // Store data in session variables
+            $_SESSION["loggedin"] = true;
+            $_SESSION["username"] = $username;
 
-            // Set parameters
-            $param_username = $username;
-
-            // Attempt to execute the prepared statement
-            if (mysqli_stmt_execute($stmt)) {
-                // Store result
-                mysqli_stmt_store_result($stmt);
-
-                // Check if username exists, if yes then verify password
-                if (mysqli_stmt_num_rows($stmt) == 1) {
-                    // Bind result variables
-                    mysqli_stmt_bind_result($stmt, $agent_prs_code, $username, $hashed_password);
-                    if (mysqli_stmt_fetch($stmt)) {
-                        if (password_verify($password, $hashed_password)) {
-                            // Password is correct, so start a new session
-                            session_start();
-
-                            // Store data in session variables
-                            $_SESSION["loggedin"] = true;
-                            $_SESSION["username"] = $username;
-
-                            // Redirect user to calendar page
-                            header("location: calendar.php");
-                        } else {
-                            // Password is not valid, display a generic error message
-                            $login_err = "Invalid username or password.";
-                        }
-                    }
-                } else {
-                    // Username doesn't exist, display a generic error message
-                    $login_err = "Invalid username or password.";
-                }
-            } else {
-                echo "Oops! Something went wrong. Please try again later.";
-            }
-            // Close statement
-            mysqli_stmt_close($stmt);
+            mysqli_close($link);
+            // Redirect user to welcome page
+            header("location: calendar.php");
         }
     }
-    // Close connection
     mysqli_close($link);
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
