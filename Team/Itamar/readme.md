@@ -9,8 +9,14 @@ To run the application, you need to install the following packages:
 
 ```bash
 sudo apt-get install Apache
-sudo apt-get install MySQL
-sudo apt-get install PHP
+sudo apt-get install MySQL 
+sudo apt-get install php libapache2-mod-php php-mysql
+php -v #To check the version of php
+sudo nano /etc/apache2/mods-enabled/dir.conf #To add the following line
+<IfModule mod_dir.c>
+        DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm
+</IfModule>
+sudo systemctl reload apache2 #To reload the apache2 service
 ```
 
 [x] HTML and CSS
