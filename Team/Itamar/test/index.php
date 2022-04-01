@@ -32,8 +32,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             mysqli_close($link);
             // Redirect user to welcome page
             header("location: calendar.php");
+        } else {
+            echo '<center><div class="alert alert-danger" role="alert">Your Password is invalid!</div></center>';
         }
-    }
+    } echo '<center><div class="alert alert-danger" role="alert">Login error!</div></center>';
     mysqli_close($link);
 }
 
@@ -67,7 +69,7 @@ if (!empty($login_err)) {
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h4 class="text-dark mb-4">Welcome Back!</h4>
+                                        <h4 class="text-dark mb-4">Welcome to the Calendar Web Application</h4>
                                     </div>
                                     <form class="user" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                                         <div class="mb-3"><input class="form-control form-control-user" type="text" aria-describedby="emailHelp" placeholder="Enter Email Address..." name="username"></div>
