@@ -4,7 +4,7 @@ CREATE DATABASE calendarDB;
 
 USE calendarDB; 
 
-    CREATE TABLE IF NOT EXISTS user (
+    CREATE TABLE IF NOT EXISTS user(
         user_name_   VARCHAR (25) NOT NULL,
         password_   VARCHAR (10) NOT NULL,
         -- ACCESS_LVL: 1 ADMIN / 2 LECTURER / 3 STUDENT
@@ -21,7 +21,7 @@ USE calendarDB;
     -- INSERT INTO USER VALUES ('student', '123', 2);
     -- INSERT INTO USER VALUES ('admin@gmail.com', 'admin1', 1);
 
-    CREATE TABLE class (
+    CREATE TABLE class(
         class_id   INT AUTO_INCREMENT PRIMARY KEY,
         user_name_   VARCHAR (25),
         lecture_id  INT,
