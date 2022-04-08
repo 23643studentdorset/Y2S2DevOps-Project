@@ -10,7 +10,7 @@ To run the application, you need to install the following packages(Step by step 
 ```console
 sudo apt-get install apache2 #To install Apache
 sudo apt-get install mysql-server #To install MySQL
-sudo apt-get install php libapache2-mod-php php-mysql #To install PHP and the modules to connect with the MySQL
+sudo apt-get install php libapache2-mod-php php-mysql #To install PHP and required modules
 sudo nano /etc/apache2/mods-enabled/dir.conf #To add the following line to the file:
 ```
 
