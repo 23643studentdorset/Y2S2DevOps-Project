@@ -13,9 +13,8 @@ sudo apt-get install mysql-server #To install MySQL
 sudo apt-get install php libapache2-mod-php php-mysql #To install PHP and required modules
 ```
 
-Now it is necessary to add the following lines to the `/etc/apache2/apache2.conf` file(This line will make Apache build PHP files).
-
-First open the dir.conf file:
+Now it is necessary to add the following lines to the `/etc/apache2/apache2.conf` file(This line will make Apache works with PHP files);
+First open the `dir.conf` file:
 
 ```console
 sudo nano /etc/apache2/mods-enabled/dir.conf
@@ -44,6 +43,7 @@ sudo systemctl reload apache2 #To reload the apache2 service
 SQL Data: username root password empty
 
 - [x] function GET USER
+- [ ] function GET Events
 - [ ] load New Modal Event for level 1, and 2
 - [ ] load Edit Modal Event for level 1, and 2
 - [ ] load View Modal Event for level 1, 2, and 3
@@ -52,7 +52,7 @@ SQL Data: username root password empty
 
 Information about the database structure:
 
-```console
+```sql
 CREATE DATABASE calendarDB;
 
 USE calendarDB; 
