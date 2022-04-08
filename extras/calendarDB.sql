@@ -15,7 +15,7 @@ USE calendarDB;
     
     
     INSERT INTO user VALUES ('admin@gmail.com', 'admin1', 1);
-    INSERT INTO user VALUES ('profesor@gmail.com', 'profesor1', 2);
+    INSERT INTO user VALUES ('professor@gmail.com', 'professor1', 2);
     INSERT INTO user VALUES ('student@gmail.com', 'student1', 3);
     --Testing constraints
     --INSERT INTO USER VALUES ('student', '123', 2);
