@@ -41,7 +41,7 @@ SQL Data: username root password empty
 ### SQL Structure
 
 LOGIN TABLE:
-USER_NAME , PASSWORD_, ACCESS_LVL{ 1-SYSTEM 2-Lecture 3-Student }
+USER_NAME , PASSWORD_, ACCESS_LVL{ 1- SYSTEM 2- Lecture 3- Student }
 
 ### Project test environment
 
