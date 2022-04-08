@@ -1,7 +1,7 @@
 
 # Calendar Web Application
 
-![Add Event](https://github.com/23643studentdorset/Y2S2DevOps-Project/blob/master/Team/Itamar/screens/addEvent.png)
+![Add Event](https://github.com/23643studentdorset/Y2S2DevOps-Project/blob/master/screenshot/addEvent.png?raw=true)
 
 ## Environment
 
