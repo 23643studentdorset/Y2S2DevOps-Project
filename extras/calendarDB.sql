@@ -19,7 +19,7 @@ USE calendarDB;
     INSERT INTO user VALUES ('student@gmail.com', 'student1', 3);
     --Testing constraints
     --INSERT INTO USER VALUES ('student', '123', 2);
-    --INSERT INTO USER VALUES ('admin@gmail.com', 'admin1', 6);
+    --INSERT INTO USER VALUES ('admin@gmail.com', 'admin1', 1);
 
     CREATE TABLE class (
         class_id   INT AUTO_INCREMENT PRIMARY KEY,
