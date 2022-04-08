@@ -13,9 +13,8 @@ sudo apt-get install mysql-server #To install MySQL
 sudo apt-get install php libapache2-mod-php php-mysql #To install PHP and required modules
 ```
 
-Now it is necessary to add the following lines to the `/etc/apache2/apache2.conf` file(This line will make Apache build PHP files).
-
-First open the dir.conf file:
+Now it is necessary to add the following lines to the `/etc/apache2/apache2.conf` file(This line will make Apache works with PHP files);
+First open the `dir.conf` file:
 
 ```console
 sudo nano /etc/apache2/mods-enabled/dir.conf
