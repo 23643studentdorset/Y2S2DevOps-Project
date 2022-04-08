@@ -1,0 +1,11 @@
+# Clones repo from GitHub
+sudo git clone https://github.com/23643studentdorset/Y2S2DevOps-Project.git /var/www/html/
+
+# Pulls last version from GitHub
+sudo git -C /var/www/html/Y2S2DevOps-Project pull
+
+# Pushes any local changes to GitHub
+sudo git -C /var/www/html/Y2S2DevOps-Project add . && git -C /var/www/html/Y2S2DevOps-Project commit -m "Changed stuff" && git -C /var/www/html/Y2S2DevOps-Project push
+
+# Verifies if there are any changes to commit
+sudo git -C /var/www/html/Y2S2DevOps-Project status
