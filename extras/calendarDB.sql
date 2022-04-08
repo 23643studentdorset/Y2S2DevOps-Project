@@ -5,10 +5,10 @@ CREATE DATABASE calendarDB;
 USE calendarDB; 
 
     CREATE TABLE user (
-        user_name_   VARCHAR (25) not null,
-        password_   VARCHAR (10) not null,
+        user_name_   VARCHAR (25) NOT NULL,
+        password_   VARCHAR (10) NOT NULL,
         -- ACCESS_LVL: 1 ADMIN / 2 LECTURER / 3 STUDENT
-        access_lvl  TINYINT      not null CHECK (access_lvl IN(1,2,3)),
+        access_lvl  TINYINT      NOT NULL CHECK (access_lvl IN(1,2,3)),
         PRIMARY KEY (user_name_),
         CONSTRAINT user_name_     CHECK (user_name_ LIKE '%@%.%'));
 
