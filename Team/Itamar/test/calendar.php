@@ -115,7 +115,7 @@ $user_level = getUserData($username, 'ACCESS_LVL');
                     #Description#
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Edit</button>
+                <?php if($user_level <= 2 ){ echo '<button type="button" class="btn btn-primary">Edit</button>';} ?>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
