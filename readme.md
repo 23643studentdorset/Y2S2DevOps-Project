@@ -51,7 +51,7 @@ SQL Data: username root password empty
 
 Information about the database structure:
 
-```console
+```sql
 CREATE DATABASE calendarDB;
 
 USE calendarDB; 
