@@ -22,7 +22,7 @@ USE calendarDB;
     -- INSERT INTO user VALUES ('admin@gmail.com', 'admin1', 1);
 
      CREATE TABLE lecture(
-        lecture_id   INT AUTO_INCREMENT,
+        lecture_id INT NOT NULL AUTO_INCREMENT,
         name_  VARCHAR (25),
         carrer  VARCHAR (25),
         year_  VARCHAR (25),
@@ -32,9 +32,9 @@ USE calendarDB;
     INSERT INTO lecture (name_, carrer, year_) VALUES ("DevOps", "Bachelor Degree in computer Science", "second year")
     
     CREATE TABLE class(
-        class_id   INT NOT NULL AUTO_INCREMENT,
-        user_name_   VARCHAR (25),
-        lecture_id  INT,
+        class_id INT NOT NULL AUTO_INCREMENT,
+        user_name_ VARCHAR (25),
+        lecture_id INT,
         PRIMARY KEY (class_id),
         FOREIGN KEY (user_name_)
             REFERENCES USER (user_name_),
@@ -46,7 +46,7 @@ USE calendarDB;
         change_id INT NOT NULL AUTO_INCREMENT,
         user_name_ VARCHAR(25),
         date_changed DATE,
-        PRIMARY KEY (change_id)
+        PRIMARY KEY (change_id),
         FOREIGN KEY (user_name_) REFERENCES user (user_name_)
         );
     
