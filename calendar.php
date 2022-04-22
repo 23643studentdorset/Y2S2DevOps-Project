@@ -111,7 +111,22 @@ $user_level = getUserData($username, 'access_lvl');
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    #Description#
+                    <table class="table ">
+                        <tbody>
+                            <tr>
+                            <th scope="row">Start Week</th>
+                            <td>25</td>
+                            </tr>
+                            <tr>
+                            <th scope="row">End Week</th>
+                            <td>27</td>
+                            </tr>
+                            <tr>
+                            <th scope="row">Assessment Description</th>
+                            <td>Assessment Description</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
                 <div class="modal-footer">
                 <?php if($user_level <= 2 ){ echo '<button type="button" class="btn btn-primary">Edit</button>';} ?>
