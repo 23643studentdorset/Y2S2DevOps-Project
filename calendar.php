@@ -64,7 +64,7 @@ $user_level = getUserData($username, 'access_lvl');
         <?php for ($counter = 1 ; $counter <=52; $counter++){
             echo '<div class="days" ';
             if($user_level <= 2 ){ echo 'data-bs-target="#eventAdd" ';}
-            echo 'data-bs-toggle="modal">'.$counter.'</div>';
+            echo 'data-bs-toggle="modal">'.$counter;'</div>';
         };?>
 
 
