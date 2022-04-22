@@ -25,6 +25,8 @@ $user_level = getUserData($username, 'access_lvl');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendar</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -58,6 +60,15 @@ $user_level = getUserData($username, 'access_lvl');
 
         <!-- Populate the calendar using javascript -->
         <div id="calendar">
+
+        <?php for ($counter = 1 ; $counter <=52; $counter++){
+            echo '<div class="days" ';
+            if($user_level <= 2 ){ echo 'data-bs-target="#eventAdd" ';}
+            echo 'data-bs-toggle="modal">'.$counter.'</div>';
+        };?>
+
+
+
             <div class="days" <?php if($user_level <= 2 ){ echo 'data-bs-target="#eventAdd"';} ?> data-bs-toggle="modal">1</div>
             <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">2</div>
             <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">3</div>
@@ -74,9 +85,6 @@ $user_level = getUserData($username, 'access_lvl');
                 <div class="event" data-bs-target="#eventShow" data-bs-toggle="modal" style="background-color: #58bae4 ; border-top-right-radius: 5px ; border-bottom-right-radius: 5px;" title="Math Exam" description="This test will consist of 2 hours working">#Title#</div>
 
             </div>
-            <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">8</div>
-            <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">9</div>
-            <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">10</div>
             <div class="days" id="currentdays">11</div>
             <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">12</div>
             <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">13
@@ -87,18 +95,7 @@ $user_level = getUserData($username, 'access_lvl');
             <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">14
                 <div class="event" data-bs-target="#eventShow" data-bs-toggle="modal" style="background-color: #58bae4 ; border-top-right-radius: 5px ; border-bottom-right-radius: 5px;" title="Math Exam" description="This test will consist of 2 hours working">#Title#</div>
             </div>
-            <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">15</div>
-            <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">16</div>
-            <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">17</div>
-            <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">18</div>
-            <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">19</div>
-            <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">20</div>
-            <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">21</div>
-            <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">22</div>
-            <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">23</div>
-            <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">24</div>
-            <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">25</div>
-            <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">26</div>
+      
         </div>
     </div>
 
@@ -131,7 +128,37 @@ $user_level = getUserData($username, 'access_lvl');
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Adding a new event
+                    <form>
+                    <div class="form-group row">
+                        <label class="col-4"></label> 
+                        <div class="col-8">
+                        <input id="assessment-title" name="assessment-title" placeholder="Assessment Title" type="text" class="form-control" required="required">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-4"></label> 
+                        <div class="col-8">
+                        <input id="start-date" name="start-date" placeholder="Start Date" type="text" class="form-control" required="required">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-4"></label> 
+                        <div class="col-8">
+                        <input id="end-date" name="end-date" placeholder="End Date" type="text" class="form-control" required="required">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-4"></label> 
+                        <div class="col-8">
+                        <textarea id="assessment-description" name="assessment-description" cols="40" rows="5" class="form-control" required="required"></textarea>
+                        </div>
+                    </div> 
+                    <div class="form-group row">
+                        <div class="offset-4 col-8">
+                        <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary">Insert and Save</button>
