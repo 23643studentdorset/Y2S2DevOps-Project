@@ -64,7 +64,7 @@ USE calendarDB;
         PRIMARY KEY (idevent)
         );
 
-    INSERT INTO event (event_starts, event_ends, event_title, event_description) VALUES ('2', '3', 'Event test', 'descriptio of the event');
+    INSERT INTO event (event_start_week, event_ends_week, event_title, event_description) VALUES ('2', '3', 'Event test', 'descriptio of the event');
 
    
 
