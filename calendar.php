@@ -64,7 +64,9 @@ $user_level = getUserData($username, 'access_lvl');
         <?php for ($counter = 1 ; $counter <=52; $counter++){
             echo '<div class="days" ';
             if($user_level <= 2 ){ echo 'data-bs-target="#eventAdd" ';}
-            echo 'data-bs-toggle="modal">'.$counter;'</div>';
+            echo 'data-bs-toggle="modal">'.$counter.'
+            <div class="event" data-bs-target="#eventShow" data-bs-toggle="modal" style="background-color: #58bae4 ; border-top-left-radius: 5px; border-bottom-left-radius: 5px;" title="Math Exam" description="This test will consist of 2 hours working">#Title#</div>
+            </div>';
         };?>
 
 
