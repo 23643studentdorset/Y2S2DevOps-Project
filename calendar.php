@@ -85,9 +85,6 @@ $user_level = getUserData($username, 'access_lvl');
                 <div class="event" data-bs-target="#eventShow" data-bs-toggle="modal" style="background-color: #58bae4 ; border-top-right-radius: 5px ; border-bottom-right-radius: 5px;" title="Math Exam" description="This test will consist of 2 hours working">#Title#</div>
 
             </div>
-            <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">8</div>
-            <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">9</div>
-            <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">10</div>
             <div class="days" id="currentdays">11</div>
             <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">12</div>
             <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">13
@@ -98,18 +95,7 @@ $user_level = getUserData($username, 'access_lvl');
             <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">14
                 <div class="event" data-bs-target="#eventShow" data-bs-toggle="modal" style="background-color: #58bae4 ; border-top-right-radius: 5px ; border-bottom-right-radius: 5px;" title="Math Exam" description="This test will consist of 2 hours working">#Title#</div>
             </div>
-            <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">15</div>
-            <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">16</div>
-            <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">17</div>
-            <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">18</div>
-            <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">19</div>
-            <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">20</div>
-            <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">21</div>
-            <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">22</div>
-            <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">23</div>
-            <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">24</div>
-            <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">25</div>
-            <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">26</div>
+      
         </div>
     </div>
 
