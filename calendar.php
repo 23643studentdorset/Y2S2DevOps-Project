@@ -14,7 +14,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
 //Set the $username variable
 $username = $_SESSION["username"];
-$user_level = getUserData($username, 'ACCESS_LVL');
+$user_level = getUserData($username, 'access_lvl');
 
 ?>
 

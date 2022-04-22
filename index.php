@@ -16,10 +16,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = mysqli_real_escape_string($link, $_POST["password"]);
 
     // Prepare a select statement to check if the username matchs with the DB
-    $query = "SELECT USER_NAME_,PASSWORD_ FROM USER WHERE (USER_NAME_ = '$username')";
+    $query = "SELECT user_name_,password_ FROM user WHERE (user_name_ = '$username')";
     $result = mysqli_query($link, $query);
     while ($row = mysqli_fetch_array($result)) {
-        $passwordDB = $row['PASSWORD_'];
+        $passwordDB = $row['password_'];
         // Prepare a select statement to check if the password matchs with the DB
         if ($password == $passwordDB) {
             //If success start the session to store the username and loggedin as true

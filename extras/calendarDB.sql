@@ -36,15 +36,18 @@ USE calendarDB;
 
 
 -- Testing constraints
-CREATE TABLE calendarDB.user (
-user_name_ VARCHAR(25) NOT NULL,
-PASSWORD_ VARCHAR(10) NULL,
-access_lvl INT NULL,
-PRIMARY KEY (user_name_));
 
-INSERT INTO calendarDB.user (user_name_, PASSWORD_, access_lvl) VALUES ('admin@gmail.com', 'admin1', '1');
-INSERT INTO calendarDB.user (user_name_, PASSWORD_, access_lvl) VALUES ('professor@gmail.com', 'professor1', '2');
-INSERT INTO calendarDB.user (user_name_, PASSWORD_, access_lvl) VALUES ('student@gmail.com', 'student1', '3');
+CREATE TABLE event (
+  idevent INT NOT NULL AUTO_INCREMENT,
+  event_starts DATETIME NULL,
+  event_ends DATETIME NULL,
+  event_title VARCHAR(255) NULL,
+  event_description LONGTEXT NULL,
+  event_colour VARCHAR(45) NULL,
+  PRIMARY KEY (idevent));
+
+  INSERT INTO event (event_starts, event_ends, event_title, event_description) VALUES ('2022-05-22 22:21:01', '2022-05-23 22:21:01', 'Event test', 'descriptio of the event');
+
 
     
 
