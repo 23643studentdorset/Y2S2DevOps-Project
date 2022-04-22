@@ -136,15 +136,15 @@ $user_level = getUserData($username, 'access_lvl');
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-4 col-form-label" for="start-date">Start Date</label> 
+                            <label class="col-4 col-form-label" for="start-week">Start Week</label> 
                             <div class="col-8">
-                            <input id="start-date" name="start-date" placeholder="Start Date" type="number" class="form-control" required="required">
+                            <input id="start-week" name="start-week" placeholder="Start Week" type="number" class="form-control" required="required">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-4 col-form-label" for="end-date">End Date</label> 
+                            <label class="col-4 col-form-label" for="end-week">End Week</label> 
                             <div class="col-8">
-                            <input id="end-date" name="end-date" placeholder="End Date" type="number" class="form-control" required="required">
+                            <input id="end-week" name="end-week" placeholder="End Week" type="number" class="form-control" required="required">
                             </div>
                         </div>
                         <div class="form-group row">
