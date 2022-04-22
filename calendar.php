@@ -60,6 +60,15 @@ $user_level = getUserData($username, 'access_lvl');
 
         <!-- Populate the calendar using javascript -->
         <div id="calendar">
+
+        <?php for ($counter = 1 ; $counter <=52; $counter++){
+            echo '<div class="days" ';
+            if($user_level <= 2 ){ echo 'data-bs-target="#eventAdd" ';}
+            echo 'data-bs-toggle="modal">'.$counter.'</div>';
+        };?>
+
+
+
             <div class="days" <?php if($user_level <= 2 ){ echo 'data-bs-target="#eventAdd"';} ?> data-bs-toggle="modal">1</div>
             <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">2</div>
             <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">3</div>
