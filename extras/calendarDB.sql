@@ -48,10 +48,20 @@ USE calendarDB;
         event_title VARCHAR(255) NULL,
         event_description LONGTEXT NULL,
         event_colour VARCHAR(45) NULL,
+        change_id INT,
+        FOREIGN KEY (change_id) REFERENCES changes(change_id),
         PRIMARY KEY (idevent)
         );
 
     INSERT INTO event (event_starts, event_ends, event_title, event_description) VALUES ('2', '3', 'Event test', 'descriptio of the event');
+
+    CREATE TABLE changes (
+        change_id INT NOT NULL AUTO_INCREMENT,
+        user_name_ VARCHAR(25),
+        date_changed DATE,
+        PRIMARY KEY (change_id)
+        FOREIGN KEY (user_name_) REFERENCES user (user_name_)
+        );
 
 
     
