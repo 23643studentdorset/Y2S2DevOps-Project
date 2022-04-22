@@ -18,8 +18,8 @@ USE calendarDB;
     INSERT INTO user VALUES ('professor@gmail.com', 'professor1', 2);
     INSERT INTO user VALUES ('student@gmail.com', 'student1', 3);
     -- Testing constraints
-    -- INSERT INTO USER VALUES ('student', '123', 2);
-    -- INSERT INTO USER VALUES ('admin@gmail.com', 'admin1', 1);
+    -- INSERT INTO user VALUES ('student', '123', 2);
+    -- INSERT INTO user VALUES ('admin@gmail.com', 'admin1', 1);
 
      CREATE TABLE lecture(
         lecture_id   INT AUTO_INCREMENT PRIMARY KEY,
@@ -27,6 +27,8 @@ USE calendarDB;
         carrer  VARCHAR (25),
         year_  VARCHAR (25),
     );
+
+    INSERT INTO lecture (name_, carrer, year_) VALUES ("DevOps", "Bachelor Degree in computer Science", "second year")
     
     CREATE TABLE class(
         class_id   INT AUTO_INCREMENT PRIMARY KEY,
@@ -41,15 +43,15 @@ USE calendarDB;
 
     CREATE TABLE event (
         idevent INT NOT NULL AUTO_INCREMENT,
-        event_starts DATETIME NULL,
-        event_ends DATETIME NULL,
+        event_start_week INT NULL,
+        event_ends_week INT NULL,
         event_title VARCHAR(255) NULL,
         event_description LONGTEXT NULL,
         event_colour VARCHAR(45) NULL,
         PRIMARY KEY (idevent)
         );
 
-    INSERT INTO event (event_starts, event_ends, event_title, event_description) VALUES ('2022-05-22 22:21:01', '2022-05-23 22:21:01', 'Event test', 'descriptio of the event');
+    INSERT INTO event (event_starts, event_ends, event_title, event_description) VALUES ('2', '3', 'Event test', 'descriptio of the event');
 
 
     
