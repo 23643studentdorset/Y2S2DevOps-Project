@@ -129,35 +129,35 @@ $user_level = getUserData($username, 'access_lvl');
                 </div>
                 <div class="modal-body">
                     <form>
-                    <div class="form-group row">
-                        <label class="col-4"></label> 
-                        <div class="col-8">
-                        <input id="assessment-title" name="assessment-title" placeholder="Assessment Title" type="text" class="form-control" required="required">
+                        <div class="form-group row">
+                            <label class="col-4 col-form-label" for="assessment-title">Assessment Title</label> 
+                            <div class="col-8">
+                            <input id="assessment-title" name="assessment-title" placeholder="Assessment Title" type="text" class="form-control" required="required">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-4"></label> 
-                        <div class="col-8">
-                        <input id="start-date" name="start-date" placeholder="Start Date" type="text" class="form-control" required="required">
+                        <div class="form-group row">
+                            <label class="col-4 col-form-label" for="start-date">Start Date</label> 
+                            <div class="col-8">
+                            <input id="start-date" name="start-date" placeholder="Start Date" type="number" class="form-control" required="required">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-4"></label> 
-                        <div class="col-8">
-                        <input id="end-date" name="end-date" placeholder="End Date" type="text" class="form-control" required="required">
+                        <div class="form-group row">
+                            <label class="col-4 col-form-label" for="end-date">End Date</label> 
+                            <div class="col-8">
+                            <input id="end-date" name="end-date" placeholder="End Date" type="number" class="form-control" required="required">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-4"></label> 
-                        <div class="col-8">
-                        <textarea id="assessment-description" name="assessment-description" cols="40" rows="5" class="form-control" required="required"></textarea>
+                        <div class="form-group row">
+                            <label class="col-4 col-form-label" for="assessment-description">Assessment Description</label> 
+                            <div class="col-8">
+                            <textarea id="assessment-description" name="assessment-description" cols="40" rows="5" class="form-control" required="required"></textarea>
+                            </div>
+                        </div> 
+                        <div class="form-group row">
+                            <div class="offset-4 col-8">
+                            <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+                            </div>
                         </div>
-                    </div> 
-                    <div class="form-group row">
-                        <div class="offset-4 col-8">
-                        <button name="submit" type="submit" class="btn btn-primary">Submit</button>
-                        </div>
-                    </div>
                     </form>
                 </div>
                 <div class="modal-footer">
