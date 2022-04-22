@@ -64,73 +64,71 @@ $user_level = getUserData($username, 'access_lvl');
         <?php for ($counter = 1 ; $counter <=52; $counter++){
             echo '<div class="days" ';
             if($user_level <= 2 ){ echo 'data-bs-target="#eventAdd" ';}
-            echo 'data-bs-toggle="modal">'.$counter.'
-            <div class="event" data-bs-target="#eventShow" data-bs-toggle="modal" style="background-color: #58bae4 ; border-top-left-radius: 5px; border-bottom-left-radius: 5px;" title="Math Exam" description="This test will consist of 2 hours working">#Title#</div>
+            echo 'data-bs-toggle="modal">'.$counter.'';
+            //Show one event if the weeks starts
+            $title = getCalendarData('event_starts',$counter,'event_title');
+            
+            if ($title != ''){
+                echo '<div class="event" data-bs-target="#eventShow'.$counter.'" data-bs-toggle="modal" style="background-color: #58bae4 ; border-top-left-radius: 5px; border-bottom-left-radius: 5px;">'.$title.'</div>';
+            }
+            if($title == null){
+            //show event if the weeks ends
+            $title = getCalendarData('event_ends',$counter,'event_title');
+            if ($title != ''){
+                echo '<div class="event" data-bs-target="#eventShow'.$counter.'" data-bs-toggle="modal" style="background-color: #58bae4 ; border-top-right-radius: 5px ; border-bottom-right-radius: 5px;">'.$title.'</div>';
+            }}
+
+            $description = getCalendarData('event_starts',$counter,'event_description');
+            if ($description == null){
+                $description = getCalendarData('event_ends',$counter,'event_description');
+            }
+
+            echo '</div>
+            <div class="modal fade" id="eventShow'.$counter.'" tabindex="-1" aria-labelledby="eventShowLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="eventShowLabel">'.$title.'</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">'.$description.'</div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Delete Event</button>
+                <button type="button" class="btn btn-primary">Edit</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
             </div>';
+
         };?>
 
 
-
-            <div class="days" <?php if($user_level <= 2 ){ echo 'data-bs-target="#eventAdd"';} ?> data-bs-toggle="modal">1</div>
-            <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">2</div>
-            <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">3</div>
-            <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">4</div>
-            <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">5
-                <div class="event" data-bs-target="#eventShow" data-bs-toggle="modal" style="background-color: #58bae4 ; border-top-left-radius: 5px; border-bottom-left-radius: 5px;" title="Math Exam" description="This test will consist of 2 hours working">#Title#</div>
-
-            </div>
             <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">6
                 <div class="event" data-bs-target="#eventShow" data-bs-toggle="modal" style="background-color: #58bae4" title="Math Exam" description="This test will consist of 2 hours working">#Title#</div>
 
             </div>
-            <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">7
-                <div class="event" data-bs-target="#eventShow" data-bs-toggle="modal" style="background-color: #58bae4 ; border-top-right-radius: 5px ; border-bottom-right-radius: 5px;" title="Math Exam" description="This test will consist of 2 hours working">#Title#</div>
-
-            </div>
-            <div class="days" id="currentdays">11</div>
-            <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">12</div>
             <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">13
                 <div class="event" data-bs-target="#eventShow" data-bs-toggle="modal" style="background-color: #58bae4 ; border-top-left-radius: 5px; border-bottom-left-radius: 5px;" title="Math Exam" description="This test will consist of 2 hours working">#Title#</div>
                 <div class="event" data-bs-target="#eventShow" data-bs-toggle="modal" style="background-color: #e45882 ;border-radius: 5px">Devps Exam</div>
                 <div class="event" data-bs-target="#eventShow" data-bs-toggle="modal" style="background-color: #58e482 ;border-radius: 5px">Ui Exam</div>
             </div>
-            <div class="days" data-bs-target="#eventAdd" data-bs-toggle="modal">14
-                <div class="event" data-bs-target="#eventShow" data-bs-toggle="modal" style="background-color: #58bae4 ; border-top-right-radius: 5px ; border-bottom-right-radius: 5px;" title="Math Exam" description="This test will consist of 2 hours working">#Title#</div>
-            </div>
-      
         </div>
     </div>
 
 
-    <!-- Modal Show Event -->
-    <div class="modal fade" id="eventShow" tabindex="-1" aria-labelledby="eventShowLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="eventShowLabel">#Title#</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-
-                </div>
-                <div class="modal-footer">
-                <?php if($user_level <= 2 ){ echo '<button type="button" class="btn btn-primary">Edit</button>';} ?>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
+   
 
     <!-- Modal Add Event -->
     <div class="modal fade" id="eventAdd" tabindex="-1" aria-labelledby="eventAddLabel" aria-hidden="true">
         <div class="modal-dialog">
+        <form method="POST">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="eventAddLabel">Create new Event</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
                         <div class="form-group row">
                             <label class="col-4 col-form-label" for="assessment-title">Assessment Title</label> 
                             <div class="col-8">
@@ -155,18 +153,13 @@ $user_level = getUserData($username, 'access_lvl');
                             <textarea id="assessment-description" name="assessment-description" cols="40" rows="5" class="form-control" required="required"></textarea>
                             </div>
                         </div> 
-                        <div class="form-group row">
-                            <div class="offset-4 col-8">
-                            <button name="submit" type="submit" class="btn btn-primary">Submit</button>
-                            </div>
-                        </div>
-                    </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Insert and Save</button>
+                    <button type="button" class="btn btn-primary" name="insert-event">Insert and Save</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
+        </form>
         </div>
     </div>
 

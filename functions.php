@@ -18,3 +18,26 @@ function getCalendarData($columm,$conditional,$returnRowData){
     }
     mysqli_close($link);
 }
+
+function insertCalendarData($event_starts,$event_ends,$event_title,$event_description){
+    include "config/config.php";
+    $query = "INSERT INTO event (event_starts, event_ends, event_title, event_description) VALUES ('$event_starts', '$event_ends', '$event_title', '$event_description)')";
+    $result = mysqli_query($link, $query);
+    if ($result) {
+        return true;
+    } else {
+        return false;
+    }
+    mysqli_close($link);
+}
+function deleteCalendarData($event_id){
+    include "config/config.php";
+    $query = "DELETE FROM event WHERE (idevent = '$event_id')";
+    $result = mysqli_query($link, $query);
+    if ($result) {
+        return true;
+    } else {
+        return false;
+    }
+    mysqli_close($link);
+}
