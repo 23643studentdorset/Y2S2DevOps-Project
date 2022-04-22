@@ -19,14 +19,14 @@ function getCalendarData($columm,$conditional,$returnRowData){
     mysqli_close($link);
 }
 
-function insertCalendarData($event_starts,$event_ends,$event_title,$event_description){
+function insertCalendarData($event_starts,$event_ends,$event_title,$event_description, $event_colour){
     include "config/config.php";
-    $query = "INSERT INTO event (event_starts, event_ends, event_title, event_description) VALUES ('$event_starts', '$event_ends', '$event_title', '$event_description)')";
+    $query = "INSERT INTO event (event_starts, event_ends, event_title, event_description, event_colour) VALUES ($event_starts, $event_ends, '$event_title', '$event_description', '$event_colour')";
     $result = mysqli_query($link, $query);
     if ($result) {
-        return true;
+        echo "Successfully inserted";
     } else {
-        return false;
+        echo "Could not insert record: ". mysqli_error($link); 
     }
     mysqli_close($link);
 }
@@ -37,7 +37,7 @@ function deleteCalendarData($event_id){
     if ($result) {
         return true;
     } else {
-        return false;
+        echo "Could not insert record: ". mysqli_error($link); 
     }
     mysqli_close($link);
 }

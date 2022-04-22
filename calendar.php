@@ -3,7 +3,7 @@
 session_start();
 
 //Load environment variables
-require "config/config.php";
+//require "config/config.php";
 require "functions.php";
 
 // Check if the user is logged in, if not then redirect him to login/index page
@@ -12,10 +12,22 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     exit;
 }
 
-//Set the $username variable
+//Set the $username variable and get the user level
 $username = $_SESSION["username"];
 $user_level = getUserData($username, 'access_lvl');
 
+//create a new event and insert it into the database
+if(isset($_POST['insert-event'])){
+    $assessment_title = $_POST['assessment-title'];
+    $assessment_color = $_POST['assessment-color'];
+    $start_week = $_POST['start-week'];
+    $end_week = $_POST['end-week'];
+    $assessment_description = $_POST['assessment-description'];
+
+    echo $assessment_description;
+    insertCalendarData($start_week, $end_week, $assessment_title, $assessment_description, $assessment_color);
+
+}
 ?>
 
 <html lang="en">
@@ -136,6 +148,12 @@ $user_level = getUserData($username, 'access_lvl');
                             </div>
                         </div>
                         <div class="form-group row">
+                            <label class="col-4 col-form-label" for="assessment-title">Assessment Color</label> 
+                            <div class="col-8">
+                            <input id="assessment-title" name="assessment-color" type="color" value="#f6b73c" class="form-control" required="required">
+                            </div>
+                        </div>
+                        <div class="form-group row">
                             <label class="col-4 col-form-label" for="start-week">Start Week</label> 
                             <div class="col-8">
                             <input id="start-week" name="start-week" placeholder="Start Week" type="number" class="form-control" required="required">
@@ -155,7 +173,7 @@ $user_level = getUserData($username, 'access_lvl');
                         </div> 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" name="insert-event">Insert and Save</button>
+                    <button type="submit" class="btn btn-primary" name="insert-event">Insert and Save</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
