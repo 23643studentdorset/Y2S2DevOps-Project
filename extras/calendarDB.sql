@@ -32,6 +32,20 @@ USE calendarDB;
             REFERENCES USER (lectures)
     );
 
+
+
+
+-- Testing constraints
+CREATE TABLE calendarDB.user (
+user_name_ VARCHAR(25) NOT NULL,
+PASSWORD_ VARCHAR(10) NULL,
+access_lvl INT NULL,
+PRIMARY KEY (user_name_));
+
+INSERT INTO calendarDB.user (user_name_, PASSWORD_, access_lvl) VALUES ('admin@gmail.com', 'admin1', '1');
+INSERT INTO calendarDB.user (user_name_, PASSWORD_, access_lvl) VALUES ('professor@gmail.com', 'professor1', '2');
+INSERT INTO calendarDB.user (user_name_, PASSWORD_, access_lvl) VALUES ('student@gmail.com', 'student1', '3');
+
     
 
     
